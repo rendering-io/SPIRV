@@ -1,0 +1,21 @@
+{
+  "folders":
+  [
+    {
+      "path": "."
+    }
+  ],
+  "settings":
+  {
+    "tab_size": 2,
+    "translate_tabs_to_spaces": true
+  },
+  "build_systems":
+  [
+    {
+      "name": "CMake",
+      "shell_cmd": "cmake --build .",
+      "working_dir": "$project_path/build"
+    }
+  ]
+}
