@@ -11,6 +11,21 @@ class BasicBlock;
 class Function;
 class Module;
 
+using Capability = spv::Capability;
+
+class Instruction {
+protected:
+  Instruction(uint32_t OpCode, const char* OpName,
+              std::initializer_list<Capability> Capabilities);
+
+public:
+  ~Instruction();
+
+private:
+  struct Impl;
+  std::unique_ptr<Impl> PImpl;  
+};
+
 class BasicBlock {
 public:
   BasicBlock* Create(const char *Name, Function *Parent);

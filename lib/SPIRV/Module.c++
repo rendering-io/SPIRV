@@ -22,9 +22,17 @@ bool isValidFunctionName(const char* Name) {
 }
 }
 
+class InstructionRange {
+public:
+  using Iterator = std::list<std::unique_ptr<Instruction>>::iterator;
+  Iterator begin();
+  Iterator end();
+};
+
 struct Module::Impl {
   std::list<std::unique_ptr<Function>> Functions;
   std::string Name;
+  std::list<std::unique_ptr<Instruction>> Instructions;
 };
 
 std::unique_ptr<Module> Module::Create(const char* Name) {
